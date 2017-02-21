@@ -46,7 +46,19 @@ gulp.task('watch', function(){
 
   // set up browsersync server
   browserSync.init({
-    proxy: siteUrl
+    logLevel: 'info',
+    logPrefix: siteUrl,
+    open: false,
+    proxy: siteUrl,
+    host: siteUrl,
+    port: 3000,
+    serveStatic: [{
+        route: ['/build', '/build/css'],
+        dir: ['./build', './../css']
+    }],
+    serveStaticOptions: {
+        fallthrough: false
+    }
   });
 
   // watch for changes on these files
