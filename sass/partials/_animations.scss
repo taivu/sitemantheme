@@ -1,0 +1,12 @@
+/*==================================
+=            ANIMATIONS            =
+==================================*/
+
+@keyframes flameFlicker-mentorsListing {
+    0% { transform: rotate(-2deg) translateY(-50%); }
+   20% { transform: rotate(1deg) translateY(-50%); }
+   40% { transform: rotate(-1deg) translateY(-50%); }
+   60% { transform: rotate(1deg) translateY(-50%);}
+   80% { transform: rotate(-2deg) translateY(-50%);}
+  100% { transform: rotate(1deg) translateY(-50%); }
+}

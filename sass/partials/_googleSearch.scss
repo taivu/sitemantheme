@@ -1,0 +1,93 @@
+/* ==========================================================================
+    Google Search
+========================================================================== */
+
+#block-gcseblock {
+
+    .gsc-input {
+        padding: 0;
+        .gsc-input-box {
+            height: auto;
+        }
+    }
+
+    input.gsc-search-button-v2 {
+        vertical-align: top;
+        margin: 0;
+        padding: 16px 27px;
+    }
+
+    // .gsc-table-cell-snippet-close, 
+    // .gs-promotion-text-cell {
+        
+    // }
+
+    .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+    }
+
+    .gsc-control-cse {
+        padding: 0;
+
+        * {
+            box-sizing: content-box;
+        }
+
+        .gsc-above-wrapper-area {
+            padding: 0;
+            border: 0;
+
+            table {
+                margin: 0;
+            }
+        }
+
+        .gcsc-branding-img-noclear {
+            max-width: initial;
+            max-width: none;
+        }
+
+        .gsc-table-result, 
+        .gsc-thumbnail-inside, 
+        .gsc-url-top {
+            padding: 0;
+        }
+
+        table {
+            margin: 0;
+            table-layout: auto;
+
+            tbody {
+                border: 0;
+            }
+        }
+
+        // table {
+
+        //     tr {
+        //         &:nth-child(2n+1) {
+        //             background: none;
+        //         }
+
+        //         &:first-child {
+        //             font-size: 1em;
+        //             background: none;
+        //             color: $safe-grey;
+        //             letter-spacing: 0;
+                    
+        //             th, td {
+        //                 background: none;
+        //                 padding: 0;
+        //                 border: none;
+        //             }
+        //         }
+
+        //         th, td {
+        //             border: 0;
+        //         }
+                
+        //     }
+
+        // }
+    }
+}

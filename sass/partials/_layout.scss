@@ -1,0 +1,56 @@
+/*==============================
+=            LAYOUT            =
+==============================*/
+
+body {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    @include bp($large) {
+        background-attachment: fixed;
+    }
+}
+
+.wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+header.siteHeader {
+    & + .mainContent {
+        margin-top: 53px;
+
+        @include bp($large) {
+            margin-top: 0;
+        }
+    }
+}
+
+
+.content-sidebar {
+    display: none;
+    background: blue;
+    @include bp($medium) {
+        display: block;
+        width: 30%;
+        float: right;
+        padding: 0 3em 0 0;
+
+        .flippedSidebar & {
+            float: right;
+            padding: 0 0 0 3em;
+        }
+    }
+}
+
+.content-main {
+    //background: red;
+    @include bp($medium) {
+        width: 70%;
+        float: left;
+
+        .flippedSidebar & {
+            float: left;
+        }
+    }
+}

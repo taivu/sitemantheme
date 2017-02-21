@@ -1,0 +1,77 @@
+/*===========================================
+=            PAGE - Regular page            =
+===========================================*/
+
+
+.page-header {
+    .page-title {
+    }
+}
+
+.page-content {
+    .content-main {
+        img {
+            margin: 0 0 1em 0;
+        }
+    }
+}
+
+.page-basic {
+
+}
+
+.page-bodyImage {
+    img {
+        margin: 0 0 1em 0;
+    }
+}
+
+.content-sidebar {
+
+}
+
+
+.pager {
+    border-top: 1px solid $grey;
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 1em 0;
+
+        li {
+            display: inline-block;
+
+            &.is-active {
+                a {
+                    color: #fff;
+                    background: $red;
+
+                    &:hover {
+                        cursor: default;
+                        background: $red;
+                    }
+                }
+            }
+
+            a {
+                transition: all .25s ease;
+                font-size: em(16, 18);
+                display: block;
+                padding: .25em .5em;
+                text-decoration: none;
+                color: $blueGrey;
+
+                &:hover {
+                    background: $grey;
+                }
+
+                @include bp($large) {
+                    font-size: em(16, 22);
+                }
+            }
+        }
+    }
+}
+
+

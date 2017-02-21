@@ -1,0 +1,25 @@
+<header role="banner">
+    <div class="wrapper">
+        {{ page.header }}
+    </div>    
+</header>
+
+<section role="main">
+    <div class="wrapper">
+        <article class="content-main">
+            {{ page.content }}
+        </article>
+
+        {% if page.sidebar %}
+          <aside class="content-sidebar" role="complementary">
+            {{ page.sidebar }}
+          </aside>
+        {% endif %}
+    </div>
+</section>
+
+{% if page.footer %}
+<footer role="contentinfo">
+  {{ page.footer }}
+</footer>
+{% endif %}

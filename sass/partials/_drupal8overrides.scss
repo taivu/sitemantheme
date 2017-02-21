@@ -1,0 +1,129 @@
+/*==========================================
+=            DRUPAL 8 OVERRIDES            =
+==========================================*/
+
+
+// for fixed header sites, pushing down page to make room for drupal admin bar.
+body { 
+    &.user-logged-in {
+        #toolbar-administration {
+            ul {
+                li {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+        .toolbar-bar {
+            position: fixed;
+        }
+
+        header.siteHeader {
+            top: 39px;
+
+            @include bp($large) {
+                top: 0;
+            }
+        }
+    }
+
+    &.toolbar-horizontal.toolbar-tray-open {
+        header.siteHeader {
+            top: 80px;
+
+            @include bp($large) {
+                top: 0;
+            }
+        }
+    }
+
+    &.toolbar-vertical.toolbar-tray-open {
+        header.siteHeader {
+            @include bp(610px) {
+                width: calc(100% - 240px);
+            }
+
+            @include bp($large) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+// Tabs for VIEW - EDIT - DELETE - DEVEL
+.drupal8-localTasks {
+    //padding: 0 1em;
+    margin: 1em auto;
+
+    ul {
+        background: #f3f3f3;
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        text-align: left;
+        box-shadow: 0px 9px 6px -6px rgba(0,0,0,.5);
+
+        max-width: 1240px;
+
+        li {
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+
+            a {
+                text-decoration: none;
+                display: block;
+                padding: .5em 1em;
+
+                &:hover {
+                    background: #e3e3e3;
+                    //box-shadow: 0px 9px 6px -6px rgba(0,0,0,.5);
+                }
+            }
+        }
+    }
+}
+
+// Drupal Status Messages (clear cache, error/success, etc.)
+.drupal8-statusMsg {
+    //padding: 0 1em;
+    margin: 1em auto;
+
+    div[role='contentinfo'] { // status messages from drupal
+        background: #d9edf7;
+        padding: 0.5em 1em;
+        margin: 0;
+
+        &[aria-label*='Error'] {
+            color: #a94442;
+            background-color: #f2dede;
+            border: 1px solid #ebccd1;
+        }
+
+        ul {
+            margin: 0;
+        }
+    }
+}
+
+
+// debug from var_dump() in *.theme file or dump() in *.twig files
+.xdebug-var-dump { 
+    font-size: 12px;
+    height: 350px;
+    overflow: scroll;
+    padding: 10px;
+    border: 10px solid $blueGrey;
+    margin: 0;
+    text-align: left;
+}
+
+
+// in admin, Image upload widget has too much empty space below.
+// this fixes that.
+.image-widget.form-managed-file.clearfix {
+    &:after {
+        clear: none;
+    }
+}

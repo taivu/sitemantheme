@@ -1,0 +1,83 @@
+/* ==========================================================================
+	Mixins
+========================================================================== */
+
+// Media Queries
+//   Usage:
+//   @include breakpoint($large) { };
+//   @include breakpoint(400px, min-height) { };
+$media-feature: 'min-width' !default;
+@mixin breakpoint($point, $feature: $media-feature) {
+    @media (#{$feature}: $point) {
+        @content;
+    }
+}
+@mixin bp($point, $feature: $media-feature) {
+    @media (#{$feature}: $point) {
+        @content;
+    }
+}
+
+// Contain Floats
+@mixin clearfix {
+	&:after { content: ""; display: table; clear: both; }
+}
+
+// Placeholder styling
+@mixin placeholder {
+    $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+    @each $placeholder in $placeholders {
+        &:#{$placeholder}-placeholder {
+            @content;
+        }
+    }
+    &.placeholder {
+        @content;
+    }
+}
+
+// Font Smoothing - Mac OS X only
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+
+
+
+
+//                                     ,,                                          ,,               ,,
+//                                   `7MM                                          db               db
+//                                     MM
+// `7M'   `MF'.gP"Ya `7MMpMMMb.   ,M""bMM  ,pW"Wq.`7Mb,od8     `7MMpMMMb.pMMMb.  `7MM  `7M'   `MF'`7MM  `7MMpMMMb.  ,pP"Ybd
+//   VA   ,V ,M'   Yb  MM    MM ,AP    MM 6W'   `Wb MM' "'       MM    MM    MM    MM    `VA ,V'    MM    MM    MM  8I   `"
+//    VA ,V  8M""""""  MM    MM 8MI    MM 8M     M8 MM           MM    MM    MM    MM      XMX      MM    MM    MM  `YMMMa.
+//     VVV   YM.    ,  MM    MM `Mb    MM YA.   ,A9 MM           MM    MM    MM    MM    ,V' VA.    MM    MM    MM  L.   I8
+//      W     `Mbmmd'.JMML  JMML.`Wbmd"MML.`Ybmd9'.JMML.       .JMML  JMML  JMML..JMML..AM.   .MA..JMML..JMML  JMML.M9mmmP'
+
+// center vertically and/or horizontally an absolute positioned element
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+}
